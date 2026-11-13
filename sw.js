@@ -19,7 +19,8 @@ self.addEventListener('fetch', (e) => {
   const fonts = url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com';
   if (url.origin !== self.location.origin && !fonts) return;
   if (req.mode === 'navigate' || url.pathname.endsWith('/') || url.pathname.endsWith('index.html')) {
-    e.respondWith(fetch(req).then((res) => {
+    // immer beim Server nachfragen, ob es eine neue Version gibt (kein veralteter Browser-Zwischenspeicher)
+    e.respondWith(fetch(url.origin + url.pathname, { cache: 'no-cache', credentials: 'same-origin' }).then((res) => {
       const copy = res.clone();
       caches.open(CACHE).then((c) => c.put('index.html', copy));
       return res;
