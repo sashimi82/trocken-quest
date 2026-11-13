@@ -101,7 +101,24 @@
   function saveDevice(patch) { App.device = Object.assign({}, App.device, patch); S.Device.set(App.device); }
   App.saveDevice = saveDevice;
 
+  // Bildschirmhöhe: Home-Bildschirm-Apps auf dem iPhone melden teils eine zu kleine Fensterhöhe.
+  // Dann gilt die Bildschirmhöhe, denn die App füllt dort immer den ganzen Bildschirm.
+  function fitHeight() {
+    let h = window.innerHeight;
+    try {
+      if (window.navigator.standalone) {
+        const land = window.matchMedia('(orientation: landscape)').matches;
+        const sh = land ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height);
+        if (sh > h) h = sh;
+      }
+    } catch (e) { /* ignore */ }
+    document.documentElement.style.setProperty('--app-h', h + 'px');
+  }
+  App.fitHeight = fitHeight;
   function boot() {
+    fitHeight();
+    window.addEventListener('resize', fitHeight);
+    window.addEventListener('orientationchange', () => setTimeout(fitHeight, 300));
     App.device = S.Device.get();
     // Version 2: Bis zu den finalen Entscheiden startet die App im Demo-Modus
     // Online-Version: startet echt (ohne Demo); die Demo bleibt in der Eltern-Ansicht erreichbar
