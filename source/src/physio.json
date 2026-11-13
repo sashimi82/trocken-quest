@@ -1,0 +1,241 @@
+{
+  "titel": "Physio-Übungen bei Enuresis – 5-Minuten-Blöcke",
+  "stand": "2026-11-08",
+  "grundregeln": [
+    "Vorher die Blase leeren.",
+    "Ruhig weiteratmen – nie die Luft anhalten oder pressen.",
+    "Langsam anspannen, langsam lösen; das Loslassen dauert mindestens so lange wie das Anspannen.",
+    "Keine Übung darf wehtun.",
+    "Nicht auf der Toilette üben und beim Pinkeln den Strahl nicht anhalten.",
+    "In den Abbildungen markiert der farbige Punkt den Beckenboden."
+  ],
+  "eltern_hinweise": [
+    "Die Übungen helfen vor allem bei Tagessymptomen und gestörter Blasenentleerung; bei reinem Bettnässen bleibt der Weckapparat die wirksamste Methode.",
+    "Die Technik einmal von einer Kinder-Beckenbodenphysiotherapie prüfen lassen (Verordnung über den Kinderarzt); ohne Anleitung gelingt das gezielte Ansteuern den wenigsten.",
+    "Nach 2–3 Wochen gemeinsam prüfen: Gelingt das Anspannen und Loslassen?"
+  ],
+  "bloecke": [
+    { "id": "A", "name": "Körper spüren", "ziel": "Wissen, wo der Beckenboden liegt und wie er sich anfühlt – die Grundlage für alle weiteren Übungen.", "dauer_min": 5, "freigeschaltet_ab_woche": 1, "empfohlene_haeufigkeit": "Start täglich (abwechselnd mit B), danach 1–2× pro Woche" },
+    { "id": "B", "name": "Atmen und Loslassen", "ziel": "Bauch und Beckenboden entspannen. Zwerchfell, Bauch und Beckenboden arbeiten als Team; ruhige Bauchatmung lehrt, die Bauchmuskeln locker zu lassen.", "dauer_min": 5, "freigeschaltet_ab_woche": 1, "empfohlene_haeufigkeit": "Täglich, gut abends im Bett" },
+    { "id": "C", "name": "Beckenboden an und los", "ziel": "Den Beckenboden gezielt anspannen und vollständig lösen. Erst beginnen, wenn das Kind ihn in Block A gut spürt.", "dauer_min": 5, "freigeschaltet_ab_woche": 3, "empfohlene_haeufigkeit": "3–4× pro Woche" },
+    { "id": "D", "name": "Beckenboden in Bewegung", "ziel": "Der Beckenboden arbeitet im Alltag mit Bauch, Rücken und Hüfte zusammen; diese Übungen trainieren dieses Zusammenspiel.", "dauer_min": 5, "freigeschaltet_ab_woche": 3, "empfohlene_haeufigkeit": "2–3× pro Woche" },
+    { "id": "E", "name": "Mit dem Gymnastikball", "ziel": "Koordination und Kraft im Ganzen, spielerisch. Ballgrösse: Beim Sitzen sind die Oberschenkel etwa waagrecht.", "dauer_min": 5, "freigeschaltet_ab_woche": 3, "empfohlene_haeufigkeit": "1–2× pro Woche" }
+  ],
+  "uebungen": [
+    {
+      "id": "A1", "block": "A", "name": "Beckenboden-Karte", "dauer_min": 1, "material": [],
+      "kurzanleitung": "Vier Knochenpunkte, dazwischen liegt der Beckenboden",
+      "schritte": [
+        "Gemeinsam die Abbildung anschauen: Der Beckenboden ist eine Muskelschicht wie ein Trampolin, aufgespannt zwischen Schambein (vorne), Steissbein (hinten) und den zwei Sitzknochen.",
+        "Schambein und Steissbein über der Kleidung ertasten; die Sitzknochen folgen in A2.",
+        "Merkbild: Der Beckenboden trägt Blase und Darm und hält die «Tür» zu. Zum Pinkeln öffnet er sie, indem er loslässt."
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"A1 Beckenboden-Karte\" font-family=\"inherit\"><defs><marker id=\"arr-a1\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><polygon points=\"112,96 140,138 112,180 84,138\" fill=\"#2F7DE1\" fill-opacity=\"0.1\" stroke=\"#A8A396\" stroke-width=\"1.25\" stroke-dasharray=\"5 4\"/><circle cx=\"112\" cy=\"96\" r=\"5\" fill=\"currentColor\"/><circle cx=\"140\" cy=\"138\" r=\"5\" fill=\"currentColor\"/><circle cx=\"112\" cy=\"180\" r=\"5\" fill=\"currentColor\"/><circle cx=\"84\" cy=\"138\" r=\"5\" fill=\"currentColor\"/><circle cx=\"112\" cy=\"138\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><text x=\"112\" y=\"84\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#6B6B6B\">vorne: Schambein</text><text x=\"112\" y=\"200\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#6B6B6B\">hinten: Steissbein</text><text x=\"76\" y=\"142\" text-anchor=\"end\" font-size=\"11.5\" fill=\"#6B6B6B\">Sitzknochen</text><text x=\"148\" y=\"142\" text-anchor=\"start\" font-size=\"11.5\" fill=\"#6B6B6B\">Sitzknochen</text></svg>"
+    },
+    {
+      "id": "A2", "block": "A", "name": "Sitzknochen-Wippe", "dauer_min": 2, "material": ["Hocker"],
+      "kurzanleitung": "Hände unter den Po, dann langsam hin und her wippen",
+      "schritte": [
+        "Auf einen harten Hocker setzen, Füsse flach auf dem Boden.",
+        "Hände mit den Handflächen nach oben unter den Po schieben: Die zwei harten Punkte sind die Sitzknochen.",
+        "Hände herausnehmen und langsam von einem Sitzknochen auf den anderen wippen, 10×.",
+        "Dann vor und zurück rollen, 10×: vorne Richtung Schambein, hinten Richtung Steissbein.",
+        "Zum Schluss aufrecht in der Mitte sitzen bleiben – die Ausgangsstellung für C3."
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"A2 Sitzknochen-Wippe\" font-family=\"inherit\"><defs><marker id=\"arr-a2\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><g stroke=\"#A8A396\" stroke-width=\"2\" fill=\"none\"><rect x=\"72\" y=\"160\" width=\"76\" height=\"7\" rx=\"3\"/><path d=\"M80 167V204M140 167V204\"/></g><polyline points=\"110,153 108,98\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"106\" cy=\"82\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"110,153 162,155 164,198 178,198\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"108,106 100,132 112,158\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"118\" cy=\"150\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M82 66Q106 50 130 66\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-start=\"url(#arr-a2)\" marker-end=\"url(#arr-a2)\"/></svg>"
+    },
+    {
+      "id": "A3", "block": "A", "name": "Körperreise", "dauer_min": 2, "material": ["Matte"],
+      "kurzanleitung": "Von den Füssen bis zum Bauch: jede Stelle 2 Atemzüge spüren",
+      "schritte": [
+        "Auf den Rücken legen, Augen zu.",
+        "Mit der Aufmerksamkeit von unten nach oben wandern: Füsse, Unterschenkel, Knie, Oberschenkel, Po, Beckenboden, Bauch – jede Stelle 2 ruhige Atemzüge.",
+        "Beim Bauch kurz fragen: Wie voll fühlt sich die Blase an, von 0 bis 10?",
+        "Danach erzählen: Was war warm, schwer oder kribbelig?"
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"A3 Körperreise\" font-family=\"inherit\"><defs><marker id=\"arr-a3\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"34\" cy=\"188\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"48,192 140,192 206,194\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"58,194 104,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"138\" cy=\"192\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M200 166H60\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" stroke-dasharray=\"3 5\" marker-end=\"url(#arr-a3)\"/></svg>"
+    },
+    {
+      "id": "B1", "block": "B", "name": "Stofftier-Atmung", "dauer_min": 2, "material": ["Matte", "Stofftier"],
+      "kurzanleitung": "Einatmen: Stofftier hebt sich, ausatmen: es sinkt wieder",
+      "schritte": [
+        "Auf den Rücken legen, Knie angewinkelt, Füsse flach; ein Stofftier auf den Bauch.",
+        "Durch die Nase einatmen und dabei bis 4 zählen: Das Stofftier hebt sich.",
+        "Durch den Mund ausatmen, wie durch einen Strohhalm, und bis 6 zählen: Das Stofftier sinkt.",
+        "10 Atemzüge; Schultern und Brust bleiben ruhig."
+      ],
+      "hinweis": "Eignet sich gut im Bett vor dem Einschlafen.",
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"B1 Stofftier-Atmung\" font-family=\"inherit\"><defs><marker id=\"arr-b1\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"34\" cy=\"186\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"48,192 122,192\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"122,192 156,148 186,200 200,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56,190 78,180 98,186\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"90\" cy=\"170\" r=\"11\" fill=\"#2F7DE1\" fill-opacity=\"0.15\" stroke=\"#A8A396\" stroke-width=\"1.5\"/><circle cx=\"120\" cy=\"194\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M90 152V112\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-start=\"url(#arr-b1)\" marker-end=\"url(#arr-b1)\"/></svg>"
+    },
+    {
+      "id": "B2", "block": "B", "name": "Rippen-Atmung", "dauer_min": 1, "material": ["Hocker"],
+      "kurzanleitung": "Hände an die unteren Rippen, in die Hände hineinatmen",
+      "schritte": [
+        "Aufrecht auf den Hocker setzen.",
+        "Hände seitlich an die unteren Rippen legen.",
+        "So einatmen, dass die Rippen die Hände nach aussen schieben – wie eine Handorgel.",
+        "Ausatmen: Die Rippen werden wieder schmal. 6 Atemzüge."
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"B2 Rippen-Atmung\" font-family=\"inherit\"><defs><marker id=\"arr-b2\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><g stroke=\"#A8A396\" stroke-width=\"2\" fill=\"none\"><rect x=\"72\" y=\"160\" width=\"76\" height=\"7\" rx=\"3\"/><path d=\"M80 167V204M140 167V204\"/></g><polyline points=\"110,153 110,96\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"110\" cy=\"80\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"110,153 162,155 164,198 178,198\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"110,104 126,120 118,128\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"114\" cy=\"152\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M134 114H160\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-b2)\"/><path d=\"M100 114H74\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-b2)\"/></svg>"
+    },
+    {
+      "id": "B3", "block": "B", "name": "Schwer wie ein Sandsack", "dauer_min": 2, "material": ["Matte"],
+      "kurzanleitung": "5 Sek. alles anspannen, dann ganz loslassen",
+      "schritte": [
+        "Auf den Rücken legen, Beine lang.",
+        "Einatmen und den ganzen Körper 5 Sekunden fest anspannen: Fäuste, Füsse, Po, Bauch.",
+        "Ausatmen und alles fallen lassen, schwer wie ein Sandsack – auch Po und Beckenboden.",
+        "3× wiederholen, dann 1 Minute ruhig liegen."
+      ],
+      "hinweis": "Eignet sich gut im Bett vor dem Einschlafen.",
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"B3 Schwer wie ein Sandsack\" font-family=\"inherit\"><defs><marker id=\"arr-b3\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"34\" cy=\"188\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"48,192 140,192 206,194\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"138\" cy=\"192\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M70 168q6 -6 0 -12q-6 -6 0 -12\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M104 168q6 -6 0 -12q-6 -6 0 -12\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M138 168q6 -6 0 -12q-6 -6 0 -12\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M172 168q6 -6 0 -12q-6 -6 0 -12\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>"
+    },
+    {
+      "id": "C1", "block": "C", "name": "Der Lift", "dauer_min": 2, "material": ["Matte"],
+      "kurzanleitung": "Ausatmen: Lift fährt hoch, dann ganz in den Keller",
+      "schritte": [
+        "Rückenlage, Knie angewinkelt, Füsse hüftbreit, Arme neben dem Körper.",
+        "Einatmen.",
+        "Beim Ausatmen den Beckenboden sanft nach innen-oben ziehen, wie ein Lift vom Erdgeschoss in den 1. Stock. Vorstellungshilfe: als würde man einen Pups zurückhalten.",
+        "3 Atemzüge oben bleiben und dabei weiteratmen. Po und Oberschenkel bleiben locker.",
+        "Den Lift langsam ins Erdgeschoss und weiter in den Keller fahren lassen: ganz loslassen, 3 Atemzüge Pause.",
+        "5–8× wiederholen."
+      ],
+      "hinweis": "Kontrolle: Drückt das Kind mit den Beinen, kneift es den Po zusammen oder hält es die Luft an, ist der Lift zu stark – sanfter versuchen.",
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"C1 Der Lift\" font-family=\"inherit\"><defs><marker id=\"arr-c1\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"34\" cy=\"186\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"48,192 122,192\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"122,192 156,148 186,200 200,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56,197 100,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"120\" cy=\"194\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M104 180V142\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-c1)\"/><path d=\"M88 142V180\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" stroke-dasharray=\"3 4\" marker-end=\"url(#arr-c1)\"/><text x=\"112\" y=\"132\" text-anchor=\"start\" font-size=\"11.5\" fill=\"#6B6B6B\">hoch</text><text x=\"80\" y=\"132\" text-anchor=\"end\" font-size=\"11.5\" fill=\"#6B6B6B\">los</text></svg>"
+    },
+    {
+      "id": "C2", "block": "C", "name": "Blinzeln", "dauer_min": 1, "material": ["Matte"],
+      "kurzanleitung": "5 kurze, schnelle Lifts, nach jedem ganz loslassen",
+      "schritte": [
+        "Gleiche Ausgangsstellung wie C1.",
+        "5 kurze, schnelle Lifts: jeweils 1 Sekunde hoch und sofort wieder ganz loslassen, wie ein Augenblinzeln.",
+        "30 Sekunden ruhig atmen, dann eine zweite Runde."
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"C2 Blinzeln\" font-family=\"inherit\"><defs><marker id=\"arr-c2\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"34\" cy=\"186\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"48,192 122,192\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"122,192 156,148 186,200 200,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56,197 100,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"120\" cy=\"194\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M76 178V160\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-c2)\"/><path d=\"M92 178V160\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-c2)\"/><path d=\"M108 178V160\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-c2)\"/><text x=\"92\" y=\"150\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#6B6B6B\">kurz, kurz, kurz</text></svg>"
+    },
+    {
+      "id": "C3", "block": "C", "name": "Lift im Sitzen", "dauer_min": 2, "material": ["Hocker"],
+      "kurzanleitung": "Aufrecht auf den Sitzknochen, Lift hoch und wieder los",
+      "schritte": [
+        "Aufrecht auf den Hocker setzen, Gewicht auf beiden Sitzknochen (wie am Ende von A2), Füsse flach.",
+        "Ausatmen und den Lift hochfahren: Der Bereich zwischen den Sitzknochen hebt sich ganz leicht vom Hocker ab.",
+        "3 Atemzüge halten, weiteratmen.",
+        "Loslassen: Der Po wird breit und schwer auf dem Hocker.",
+        "5× wiederholen."
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"C3 Lift im Sitzen\" font-family=\"inherit\"><defs><marker id=\"arr-c3\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><g stroke=\"#A8A396\" stroke-width=\"2\" fill=\"none\"><rect x=\"72\" y=\"160\" width=\"76\" height=\"7\" rx=\"3\"/><path d=\"M80 167V204M140 167V204\"/></g><polyline points=\"110,153 110,96\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"110\" cy=\"80\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"110,153 162,155 164,198 178,198\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"110,104 118,130 140,150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"114\" cy=\"152\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M92 146V112\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-c3)\"/><path d=\"M78 112V146\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" stroke-dasharray=\"3 4\" marker-end=\"url(#arr-c3)\"/></svg>"
+    },
+    {
+      "id": "D1", "block": "D", "name": "Katze und Kuh", "dauer_min": 2, "material": ["Matte"],
+      "kurzanleitung": "Ausatmen: Rücken rund, einatmen: sanft hohl",
+      "schritte": [
+        "Vierfüsslerstand: Hände unter den Schultern, Knie unter den Hüften.",
+        "Ausatmen: Rücken rund machen wie eine Katze, Kopf sinkt, Becken rollt ein – dabei den Lift sanft hochfahren.",
+        "Einatmen: Rücken langsam sanft hohl werden lassen, Blick leicht nach vorn, Beckenboden lässt los.",
+        "8× im eigenen Atemrhythmus."
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"D1 Katze und Kuh\" font-family=\"inherit\"><defs><marker id=\"arr-d1\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"42\" cy=\"150\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"60,202 60,148\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M60 148Q105 108 150 148\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\"/><path d=\"M60 148Q105 170 150 148\" fill=\"none\" stroke=\"#6B6B6B\" stroke-width=\"2.5\" stroke-dasharray=\"5 5\"/><polyline points=\"150,148 150,202 198,202\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"154\" cy=\"152\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><text x=\"105\" y=\"110\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#6B6B6B\">rund</text><text x=\"105\" y=\"186\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"#6B6B6B\">hohl</text></svg>"
+    },
+    {
+      "id": "D2", "block": "D", "name": "Brücke", "dauer_min": 2, "material": ["Matte"],
+      "kurzanleitung": "Becken heben, langsam ablegen, dann Beckenboden loslassen",
+      "schritte": [
+        "Rückenlage, Knie angewinkelt, Füsse hüftbreit, Arme neben dem Körper.",
+        "Ausatmen, Füsse in den Boden drücken und das Becken langsam heben, bis Knie, Hüfte und Schultern eine Linie bilden. Kein Hohlkreuz.",
+        "3 Atemzüge oben bleiben.",
+        "Wirbel für Wirbel ablegen.",
+        "Unten angekommen den Beckenboden bewusst ganz loslassen.",
+        "5× wiederholen."
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"D2 Brücke\" font-family=\"inherit\"><defs><marker id=\"arr-d2\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"34\" cy=\"186\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"48,194 118,160\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"118,160 156,148 184,200 198,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56,199 104,201\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"118\" cy=\"162\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M128 198V174\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-d2)\"/></svg>"
+    },
+    {
+      "id": "D3", "block": "D", "name": "Knie-Kissen-Druck", "dauer_min": 1, "material": ["Matte", "Kissen oder kleiner Ball"],
+      "kurzanleitung": "Kissen zwischen die Knie, 5 Sek. drücken, dann lösen",
+      "schritte": [
+        "Rückenlage, Knie angewinkelt; ein Kissen oder einen kleinen Ball zwischen die Knie klemmen.",
+        "Ausatmen, die Knie sanft gegen das Kissen drücken und den Lift mit hochfahren.",
+        "5 Sekunden halten, weiteratmen.",
+        "Ganz lösen, 2 Atemzüge Pause.",
+        "5× wiederholen."
+      ],
+      "hinweis": "Hier dürfen die Oberschenkel mitarbeiten.",
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"D3 Knie-Kissen-Druck\" font-family=\"inherit\"><defs><marker id=\"arr-d3\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"34\" cy=\"186\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"48,192 122,192\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"122,192 156,148 186,200 200,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56,197 100,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"156\" cy=\"150\" rx=\"10\" ry=\"14\" fill=\"#2F7DE1\" fill-opacity=\"0.15\" stroke=\"#A8A396\" stroke-width=\"1.5\"/><circle cx=\"120\" cy=\"194\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M124 118H144\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-d3)\"/><path d=\"M188 118H168\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-d3)\"/></svg>"
+    },
+    {
+      "id": "E1", "block": "E", "name": "Ballsitzen", "dauer_min": 2, "material": ["Gymnastikball"],
+      "kurzanleitung": "Kleine Kreise mit dem Becken, dann Lift im Sitzen",
+      "schritte": [
+        "In die Mitte des Balls setzen, Füsse hüftbreit und flach, aufrecht auf den Sitzknochen.",
+        "Mit dem Becken langsam kleine Kreise rollen, 5× in jede Richtung; dann 5× vor und zurück.",
+        "Still sitzen und 3× den Lift im Sitzen machen (wie C3), jedes Mal ganz loslassen."
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"E1 Ballsitzen\" font-family=\"inherit\"><defs><marker id=\"arr-e1\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"110\" cy=\"178\" r=\"26\" fill=\"#A8A396\" fill-opacity=\"0.15\" stroke=\"#A8A396\" stroke-width=\"1.5\"/><polyline points=\"110,150 110,94\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"110\" cy=\"78\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"110,150 156,154 160,200 174,200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"110,102 124,128 146,150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"110\" cy=\"150\" rx=\"28\" ry=\"9\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" stroke-dasharray=\"4 4\"/><circle cx=\"110\" cy=\"152\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/></svg>"
+    },
+    {
+      "id": "E2", "block": "E", "name": "Ball-Brücke", "dauer_min": 2, "material": ["Matte", "Gymnastikball"],
+      "kurzanleitung": "Waden auf dem Ball, Becken heben und senken",
+      "schritte": [
+        "Rückenlage, die Waden auf dem Ball, Arme neben dem Körper.",
+        "Ausatmen, den Lift hochfahren und das Becken heben, bis Schultern, Hüfte und Knie eine Linie bilden.",
+        "3 Atemzüge halten; der Ball bleibt ruhig.",
+        "Langsam ablegen und den Beckenboden ganz loslassen.",
+        "5× wiederholen."
+      ],
+      "hinweis": "Variante für Fortgeschrittene: oben den Ball mit den Beinen langsam heran- und wieder wegrollen.",
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"E2 Ball-Brücke\" font-family=\"inherit\"><defs><marker id=\"arr-e2\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"176\" cy=\"181\" r=\"22\" fill=\"#A8A396\" fill-opacity=\"0.15\" stroke=\"#A8A396\" stroke-width=\"1.5\"/><circle cx=\"34\" cy=\"186\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"48,194 116,166\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"116,166 146,152 198,158\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56,199 104,201\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"116\" cy=\"168\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M126 198V176\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-e2)\"/></svg>"
+    },
+    {
+      "id": "E3", "block": "E", "name": "Ball-Halter", "dauer_min": 1, "material": ["Matte", "kleiner Ball oder Kissen"],
+      "kurzanleitung": "Ball zwischen die Unterschenkel, Beine heben, halten, ablegen",
+      "schritte": [
+        "Rückenlage, Knie angewinkelt; einen kleinen Ball oder ein Kissen zwischen die Unterschenkel klemmen.",
+        "Ausatmen und die Beine anheben, bis die Unterschenkel waagrecht sind. Der untere Rücken bleibt am Boden.",
+        "3 Atemzüge halten, weiteratmen.",
+        "Langsam abstellen und alles loslassen.",
+        "5× wiederholen."
+      ],
+      "hinweis": null,
+      "bild_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 44 224 172\" role=\"img\" aria-label=\"E3 Ball-Halter\" font-family=\"inherit\"><defs><marker id=\"arr-e3\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M0 0L10 5L0 10z\" fill=\"#2F7DE1\"/></marker></defs><line x1=\"12\" x2=\"212\" y1=\"204\" y2=\"204\" stroke=\"#D9D6CE\" stroke-width=\"2\"/><circle cx=\"172\" cy=\"148\" r=\"13\" fill=\"#A8A396\" fill-opacity=\"0.15\" stroke=\"#A8A396\" stroke-width=\"1.5\"/><circle cx=\"34\" cy=\"188\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\"/><polyline points=\"48,194 122,194\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"122,194 146,148 198,148\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><polyline points=\"56,199 104,201\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"122\" cy=\"196\" r=\"7\" fill=\"#2F7DE1\" fill-opacity=\"0.35\" stroke=\"#2F7DE1\" stroke-width=\"2\"/><path d=\"M172 190V166\" fill=\"none\" stroke=\"#2F7DE1\" stroke-width=\"2\" marker-end=\"url(#arr-e3)\"/></svg>"
+    }
+  ],
+  "wochenplan": {
+    "woche_1_2": "Täglich abwechselnd Block A oder B am Nachmittag, abends B1 im Bett.",
+    "ab_woche_3": [
+      { "tag": "Mo", "nachmittag": "C", "abend": "B1" },
+      { "tag": "Di", "nachmittag": "D", "abend": "B3" },
+      { "tag": "Mi", "nachmittag": "A", "abend": "B1" },
+      { "tag": "Do", "nachmittag": "C", "abend": "B3" },
+      { "tag": "Fr", "nachmittag": "E", "abend": "B1" },
+      { "tag": "Sa", "nachmittag": "D", "abend": "B3" },
+      { "tag": "So", "nachmittag": null, "abend": "B1 (freiwillig)" }
+    ]
+  },
+  "motivation": [
+    "Das Kind entscheidet mit, welche Übungen es mag; Lieblingsübungen dürfen öfter vorkommen.",
+    "Belohnt wird das Üben, nicht die trockene Nacht: Punkte pro erledigtem Block.",
+    "Eltern machen mit.",
+    "Geduld: Bei täglichem Üben spürt man nach einigen Wochen einen Unterschied."
+  ],
+  "quellen": [
+    { "titel": "Zivkovic et al. 2012 – Diaphragmatic breathing exercises and pelvic floor retraining in children with dysfunctional voiding", "url": "https://pubmed.ncbi.nlm.nih.gov/22669134/" },
+    { "titel": "Ladi-Seyedian et al. 2014 – Functional pelvic floor muscle exercises with Swiss ball and urotherapy (Abstract)", "url": "https://urotoday.com/recent-abstracts/pelvic-health-reconstruction/urinary-incontinence/72704-combined-functional-pelvic-floor-muscle-exercises-with-swiss-ball-and-urotherapy-for-management-of-dysfunctional-voiding-in-children-a-randomized-clinical-trial-abstract.html" },
+    { "titel": "Campos et al. 2013 – Urotherapy vs. oxybutynin in nonmonosymptomatic enuresis", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4872895/" },
+    { "titel": "Das Rehaportal – Beckenbodentherapie", "url": "https://www.dasrehaportal.de/behandlungen/beckenbodentherapie" },
+    { "titel": "Universitätsmedizin Mannheim – Beckenbodentraining für Kinder", "url": "https://www.umm.de/physiotherapie/therapie-fuer-kinder/physiotherapie/therapiemethoden/beckenbodentraining-fuer-kinder/" },
+    { "titel": "Universitätsklinikum Münster – Beckenbodentraining", "url": "https://www.ukm.de/fileadmin/user_upload/Medizin/Zentren/Kontinenz_Beckenbodenzentrum/PDF/ukm-kontinenzzentrum-Beckenbodentraining.pdf" },
+    { "titel": "Alder Hey Children's Hospital – Pelvic floor training", "url": "https://alderhey.nhs.uk/?p=105187" },
+    { "titel": "Borgström et al. 2022 – Daytime urotherapy in nocturnal enuresis (RCT)", "url": "https://adc.bmj.com/content/early/2022/01/23/archdischild-2021-323488.full.pdf" },
+    { "titel": "Kinderspital Zürich – Wenn das Bett nass wird, Ratgeber für Eltern", "url": "https://www.kispi.uzh.ch/d3/7093/wenn-das-bett-nass-wird---ratgeber-für-eltern?id=7093" }
+  ]
+}
