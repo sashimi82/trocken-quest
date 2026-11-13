@@ -101,18 +101,32 @@
   function saveDevice(patch) { App.device = Object.assign({}, App.device, patch); S.Device.set(App.device); }
   App.saveDevice = saveDevice;
 
-  // Bildschirmhöhe: Home-Bildschirm-Apps auf dem iPhone melden teils eine zu kleine Fensterhöhe.
-  // Dann gilt die Bildschirmhöhe, denn die App füllt dort immer den ganzen Bildschirm.
+  // Bildschirmhöhe. Fehler in iOS 26: Home-Bildschirm-Apps mit durchsichtiger Statusleiste enden um die Höhe
+  // der Statusleiste zu früh; darunter zeichnet iOS nichts. Die App misst darum die nutzbare Fläche mit einem
+  // unsichtbaren Messfeld und legt die Navigation genau an deren unteres Ende.
+  let probe = null;
   function fitHeight() {
-    let h = window.innerHeight;
+    if (!probe) {
+      probe = document.createElement('div');
+      probe.setAttribute('aria-hidden', 'true');
+      probe.style.cssText = 'position:fixed;top:0;bottom:0;left:0;width:1px;visibility:hidden;pointer-events:none;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box;';
+      document.body.appendChild(probe);
+    }
+    const cs = getComputedStyle(probe);
+    const h = Math.round(probe.getBoundingClientRect().height) || window.innerHeight;
+    const safeTop = parseFloat(cs.paddingTop) || 0, safeBottom = parseFloat(cs.paddingBottom) || 0;
+    let gap = 0;
     try {
-      if (window.navigator.standalone) {
+      if (window.navigator.standalone && safeTop > 0) {
         const land = window.matchMedia('(orientation: landscape)').matches;
         const sh = land ? Math.min(screen.width, screen.height) : Math.max(screen.width, screen.height);
-        if (sh > h) h = sh;
+        gap = Math.max(0, Math.min(80, sh - h));
       }
     } catch (e) { /* ignore */ }
-    document.documentElement.style.setProperty('--app-h', h + 'px');
+    const root = document.documentElement.style;
+    root.setProperty('--app-h', h + 'px');
+    root.setProperty('--nav-pad', Math.max(0, safeBottom - gap) + 'px');
+    App.viewport = { h, gap, safeTop, safeBottom };
   }
   App.fitHeight = fitHeight;
   function boot() {
