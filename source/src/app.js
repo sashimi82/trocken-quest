@@ -379,22 +379,43 @@
   App.afterRender = afterRender;
 
   /* ---------- Inselzeit (Spielzeit pro Tag) ---------- */
-  function islandLimitSec() { return Math.max(1, App.st.settings.islandMinutes || 5) * 60; }
+  // Grundzeit pro Tag plus «nur heute» geschenkte Minuten der Eltern (gilt nur am eingetragenen Tag)
+  function islandExtraMin() { const x = App.st.settings.islandExtra; return x && x.day === App.st.today ? Math.max(0, x.min || 0) : 0; }
+  function islandLimitSec() { return (Math.max(1, App.st.settings.islandMinutes || 5) + islandExtraMin()) * 60; }
+  App.islandExtraMin = islandExtraMin; App.islandLimitSec = islandLimitSec;
   function islandUsedSec() {
     const t = App.data.prefs.islandTime;
     const base = t && t.day === App.st.today ? t.sec : 0;
     return App.ui.islandDay === App.st.today ? Math.max(base, App.ui.islandSec || 0) : base;
   }
+  App.islandUsedSec = () => islandUsedSec();
   function islandLeft() { return Math.max(0, islandLimitSec() - islandUsedSec()); }
   App.islandLeft = islandLeft;
   function islandTimeLabel() {
     const l = islandLeft();
     return l <= 0 ? 'Inselzeit vorbei' : 'Inselzeit ' + Math.floor(l / 60) + ':' + String(l % 60).padStart(2, '0');
   }
+  // Die Inselzeit läuft nur, wenn wirklich gespielt wird:
+  //  * nur auf dem iPhone des Kindes (Eltern dürfen schauen, ohne dem Kind Zeit wegzunehmen)
+  //  * nur wenn die App sichtbar ist
+  //  * nur wenn in den letzten 30 Sekunden jemand den Bildschirm berührt hat (gesperrtes oder liegengelassenes Handy zählt nicht)
+  const IDLE_MS = 30000;
+  let lastTouch = 0;
+  ['pointerdown', 'touchstart', 'keydown', 'wheel'].forEach((t) => document.addEventListener(t, () => { lastTouch = Date.now(); }, { capture: true, passive: true }));
+  try { document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') lastTouch = 0; }); } catch (e) { /* ignore */ }
+  window.addEventListener('pagehide', () => { lastTouch = 0; });
+  window.addEventListener('blur', () => { lastTouch = 0; });
+  function countsIslandTime() { return App.device.demo || !LIVE || App.device.role === 'kind'; }
+  App.countsIslandTime = countsIslandTime;
+  App.islandIdle = () => Date.now() - lastTouch > IDLE_MS;
   function islandTick() {
     if (App.view !== 'insel' || !window.Game) return;
     try { if (document.visibilityState === 'hidden') return; } catch (e) { /* ignore */ }
     if (window.Game.phase() === 'nacht') return;
+    if (!countsIslandTime()) return;
+    const pill = $('#game-time');
+    if (App.islandIdle()) { if (pill && islandLeft() > 0) { pill.textContent = islandTimeLabel() + ' · Pause'; pill.classList.add('paused'); } return; }
+    if (pill) pill.classList.remove('paused');
     if (App.ui.islandDay !== App.st.today) { App.ui.islandDay = App.st.today; App.ui.islandSec = islandUsedSec(); }
     if (islandLeft() <= 0) return;
     App.ui.islandSec = (App.ui.islandSec || 0) + 1;
@@ -534,6 +555,14 @@
   function gridMatch(grid) {
     return E.RECIPES.find((r) => r.pattern.join('').split('').every((ch, i) => (r.key[ch] || null) === (grid[i] || null))) || null;
   }
+  function afterText(r) { return r.after === 'kristallinsel' ? 'nach dem Flug zur Kristallinsel' : r.after === 'leiter' ? 'nach der Leiter' : 'später'; }
+  function recipeWhy(r) {
+    const state = App.st.recipeState[r.id];
+    if (state === 'gesperrt') return 'Dieses Muster ergibt noch nichts. Gebraucht wird es erst ' + afterText(r) + '.';
+    if (state === 'gebaut') return r.name + ' ist schon gebaut. Das brauchst du nicht nochmals.';
+    if (state === 'bereit') return 'Du hast schon ' + (r.id === 'leiter' ? 'eine Leiter' : r.id === 'bruecke' ? 'eine Brücke' : 'einen Stützbogen') + '. Bau sie zuerst an.';
+    return '';
+  }
   function recipeOpen(r) { return !r.after || App.st.built[r.after]; }
   function werkbankHtml() {
     const p = App.ui.panel, st = App.st;
@@ -546,13 +575,16 @@
     }
     const use = gridUse(p.grid);
     const avail = { holz: st.holz - use.holz, stein: st.stein - use.stein };
-    const match = gridMatch(p.grid);
+    const found = gridMatch(p.grid);
+    // Nur Rezepte, die gerade gebraucht werden, ergeben etwas. Ein Muster für später bleibt ohne Ergebnis.
+    const match = found && st.recipeState[found.id] === 'offen' ? found : null;
+    const why = found && !match ? recipeWhy(found) : '';
     const rsel = p.recipe ? E.RECIPES.find((r) => r.id === p.recipe) : null;
     let h = '<div class="sec-h">Rezeptbuch</div><div class="recipes">' + E.RECIPES.map((r) => {
       const state = st.recipeState[r.id];
       const open = state === 'offen';
       const need = Object.keys(r.cost).map((k) => r.cost[k] + ' ' + RES_NAME[k]).join(' + ');
-      const sub = state === 'gebaut' ? 'schon gebaut' : state === 'bereit' ? 'liegt bereit: jetzt anbauen' : state === 'gesperrt' ? 'nach der Leiter' : need;
+      const sub = state === 'gebaut' ? 'schon gebaut' : state === 'bereit' ? 'liegt bereit: jetzt anbauen' : state === 'gesperrt' ? afterText(r) : need;
       return '<button class="recipe' + (p.recipe === r.id ? ' on' : '') + '" data-act="wb-recipe" data-id="' + r.id + '"' + (open ? '' : ' disabled') + '><canvas data-item="' + r.id + '" aria-hidden="true"></canvas><span><b>' + esc(r.name) + '</b><small>' + esc(sub) + '</small></span></button>';
     }).join('') + '</div>';
     const ghost = rsel ? rsel.pattern.join('').split('').map((ch) => rsel.key[ch] || null) : [];
@@ -562,7 +594,8 @@
         (g || gh ? '<canvas data-item="' + (g || gh) + '" aria-hidden="true"></canvas>' : '') + (g ? '<b class="num">' + E.SLOT_UNITS[g] + '</b>' : '') + '</button>';
     }).join('') + '</div><span class="arrow" aria-hidden="true">' + icon('next', 26) + '</span>' +
       '<button class="slot big result' + (match ? ' ok' : '') + '" data-act="wb-make"' + (match ? '' : ' disabled') + ' aria-label="' + (match ? esc(match.name) + ' herstellen' : 'Noch kein Rezept erkannt') + '">' + (match ? '<canvas data-item="' + match.id + '" aria-hidden="true"></canvas>' : '') + '</button></div>';
-    h += '<p class="small ' + (match ? '' : 'muted') + '">' + (match ? 'Tippe auf das Ergebnis, um ' + esc(match.name === 'Leiter' ? 'die Leiter' : match.name === 'Brücke' ? 'die Brücke' : 'den Stützbogen') + ' herzustellen.' : p.hand ? 'Tippe auf ein Feld, um ' + RES_NAME[p.hand] + ' hinzulegen. Ein Feld braucht ' + E.SLOT_UNITS[p.hand] + ' ' + RES_NAME[p.hand] + '.' : 'Wähle unten ein Material und lege es nach dem Muster ins Raster.') + '</p>';
+    h += why ? '<p class="small" style="color:var(--gold)">' + esc(why) + '</p>' : '';
+    if (!why) h += '<p class="small ' + (match ? '' : 'muted') + '">' + (match ? 'Tippe auf das Ergebnis, um ' + esc(match.name === 'Leiter' ? 'die Leiter' : match.name === 'Brücke' ? 'die Brücke' : 'den Stützbogen') + ' herzustellen.' : p.hand ? 'Tippe auf ein Feld, um ' + RES_NAME[p.hand] + ' hinzulegen. Ein Feld braucht ' + E.SLOT_UNITS[p.hand] + ' ' + RES_NAME[p.hand] + '.' : 'Wähle unten ein Material und lege es nach dem Muster ins Raster.') + '</p>';
     h += '<div class="sec-h">Material</div><div class="row wrap">' + ['holz', 'stein'].map((m) => '<button class="mat' + (p.hand === m ? ' on' : '') + '" data-act="wb-hand" data-m="' + m + '" aria-pressed="' + (p.hand === m) + '"><canvas data-item="' + m + '" aria-hidden="true"></canvas><span><b>' + RES_NAME[m] + '</b><small class="num">' + avail[m] + ' übrig</small></span></button>').join('') + '</div>';
     if (E.RECIPES.every((r) => st.recipeState[r.id] !== 'offen')) h += '<div class="banner teal small"><div>Gerade gibt es nichts herzustellen. ' + (E.RECIPES.some((r) => st.recipeState[r.id] === 'bereit') ? 'Bau zuerst an, was bereitliegt.' : 'Neue Rezepte kommen mit den nächsten Gebieten.') + '</div></div>';
     h += '<div class="row"><button class="btn sm ghost" data-act="wb-clear">Raster leeren</button>' + (rsel ? '<button class="btn sm ghost" data-act="wb-auto">Muster einlegen</button>' : '') + '</div>';
@@ -772,7 +805,7 @@
     h += '</div>';
     const scene = window.Game ? window.Game.scene() : 'insel';
     const sleeping = window.Game && window.Game.phase() === 'nacht';
-    if (islandLeft() <= 0) h += '<div class="banner violet">' + icon('clock', 20) + '<div class="small">Die Inselzeit für heute ist vorbei (' + (st.settings.islandMinutes || 5) + ' Minuten). Dein Material wartet bis morgen. Quests und Training gehen trotzdem.</div></div>';
+    if (islandLeft() <= 0) h += '<div class="banner violet">' + icon('clock', 20) + '<div class="small">Die Inselzeit für heute ist vorbei (' + Math.round(islandLimitSec() / 60) + ' Minuten). Dein Material wartet bis morgen. Quests und Training gehen trotzdem.</div></div>';
     h += '<div class="row">' + (scene === 'hoehle'
       ? '<button class="btn grow" data-act="cave-leave">' + icon('back', 18) + ' Höhle verlassen</button>'
       : '<button class="btn grow" data-act="panel" data-kind="vorrat">' + icon('chest', 18) + ' Vorrat</button><button class="btn grow" data-act="panel" data-kind="werkbank">' + icon('gear', 18) + ' Werkbank</button>') + '</div>';
@@ -945,7 +978,7 @@
     return '<div class="row between"><div class="h2">So funktioniert das Spiel</div>' + close + '</div>' +
       step(1, 'Quests erledigen', 'Trinken, Blasen-Scan, Training und Abendroutine. Jede erledigte Quest bringt ' + st.unit + ' und Baumaterial: Holz und Stein.', cv('hero', 'grass')) +
       step(2, 'Level steigen', 'Mit ' + st.unit + ' steigst du im Level. Bei Level ' + st.stages[0] + ', ' + st.stages[1] + ' und ' + st.stages[2] + ' bekommt ' + name + ' neue Ausrüstung: Schaufel, Gleitflügel, Kristallrüstung.', cv('hero', 'grass', ' data-stage="2"')) +
-      step(3, 'Auf der Insel spielen', 'Tippe auf die Insel, dann läuft ' + name + ' dorthin. Mit dem Finger verschiebst du die Insel, mit + und − zoomst du. Material, das die Helfer bringen, liegt herum: Lauf hin und sammle es ein. Es kommt in die Vorratskammer. Pro Tag hast du ' + (s.islandMinutes || 5) + ' Minuten Inselzeit.', cv('moosling', 'leaves')) +
+      step(3, 'Auf der Insel spielen', 'Tippe auf die Insel, dann läuft ' + name + ' dorthin. Mit dem Finger verschiebst du die Insel, mit + und − zoomst du. Material, das die Helfer bringen, liegt herum: Lauf hin und sammle es ein. Es kommt in die Vorratskammer. Pro Tag hast du ' + (s.islandMinutes || 5) + ' Minuten Inselzeit. Sie läuft nur, während du spielst.', cv('moosling', 'leaves')) +
       step(4, 'Herstellen und bauen', 'In der Werkbank legst du Holz oder Stein nach Rezept ins Raster. So entstehen Leiter und Stützbogen. Dann baust du sie an der leuchtenden Stelle am Berg an. Später fliegst du zur Kristallinsel.', cv('kiesel', 'stone')) +
       step(5, 'Helfer sammeln', 'Jedes neue Gebiet bringt einen Helfer. Moosling bringt Holz, Kiesel Stein, Funkel findet Truhen und den Kristall-Schlüssel. Helfer werden stärker nach einer 7-Tage-Serie und nach einem Boss-Sieg.', cv('moosling', 'leaves')) +
       step(6, 'Wochen-Boss', 'Jeden Montag kommt der Sturm-Golem. Jede Quest macht Schaden, jeder Helfer +1 dazu. Besiegst du ihn, gibt es Beute.', cv('golem', 'cloud')) +
@@ -1188,10 +1221,7 @@
   A['wb-make'] = () => {
     const p = App.ui.panel, r = gridMatch(p.grid);
     if (!r) return;
-    const state = App.st.recipeState[r.id];
-    if (state === 'gesperrt') { toast('Dieses Rezept gibt es erst nach der Leiter'); return; }
-    if (state === 'gebaut') { toast(r.name + ' ist schon gebaut. Das brauchst du nicht nochmals.'); return; }
-    if (state === 'bereit') { toast('Du hast schon ' + (r.id === 'leiter' ? 'eine Leiter' : 'einen Stützbogen') + '. Bau sie zuerst an.'); return; }
+    if (App.st.recipeState[r.id] !== 'offen') { toast(recipeWhy(r)); return; }
     const before = App.st.items[r.id] || 0;
     addEvent({ type: 'craft', recipe: r.id }, { quiet: true });
     if ((App.st.items[r.id] || 0) <= before) { toast('Das hat nicht geklappt. Ist genug Material im Vorrat?'); return; }

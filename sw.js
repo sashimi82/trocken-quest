@@ -2,7 +2,7 @@
  * Die Seite selbst: zuerst aus dem Netz (immer die neuste Version), ohne Netz aus dem Zwischenspeicher.
  * Schriften und Symbole: aus dem Zwischenspeicher. Der gemeinsame Speicher (Supabase) wird nie zwischengespeichert.
  */
-const CACHE = 'tq-3f23a9045c';
+const CACHE = 'tq-c012a71fdb';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', (e) => {

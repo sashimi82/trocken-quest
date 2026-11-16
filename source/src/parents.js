@@ -188,6 +188,12 @@
 
     h += '<div class="sec-h">Insel</div><section class="blk stack">' +
       '<div class="row between wrap"><div class="grow"><div class="h3">Inselzeit pro Tag</div><div class="tiny muted">Danach ruht das Spiel bis morgen. Quests, Training und Nacht-Eintrag gehen immer.</div></div>' + stepper('Inselzeit pro Tag', (s.islandMinutes || 5) + ' Min.', 'set-num', { key: 'islandMinutes', step: 1, min: 1, max: 30 }) + '</div>' +
+      (function () {
+        const extra = App.islandExtraMin(), used = Math.round(App.islandUsedSec() / 60), lim = Math.round(App.islandLimitSec() / 60);
+        return '<div class="stack" style="gap:8px"><div class="row between wrap"><div class="grow"><div class="h3">Nur heute mehr Zeit</div><div class="tiny muted">Heute: ' + used + ' von ' + lim + ' Min. gespielt' + (extra ? ' (davon ' + extra + ' Min. extra)' : '') + '. Morgen gilt wieder die normale Zeit.</div></div></div>' +
+          '<div class="row wrap"><button class="btn sm" data-act="island-extra" data-min="5">+5 Min. heute</button><button class="btn sm" data-act="island-extra" data-min="10">+10 Min. heute</button>' +
+          (extra ? '<button class="btn sm ghost" data-act="island-extra" data-min="0">Extra wegnehmen</button>' : '') + '</div></div>';
+      })() +
       '<div class="row wrap" style="gap:12px"><div class="field grow"><label for="f-sleep1">Schlafenszeit ab</label><input class="input" type="time" id="f-sleep1" data-bind="sleepFrom" value="' + esc(s.sleepFrom || '22:00') + '"></div>' +
       '<div class="field grow"><label for="f-sleep2">bis</label><input class="input" type="time" id="f-sleep2" data-bind="sleepTo" value="' + esc(s.sleepTo || '06:00') + '"></div></div>' +
       '<p class="tiny dim">In der Schlafenszeit schlafen alle im Haus, das Spiel ist zu. Drei Stunden vorher wird es auf der Insel Abend.</p></section>';
@@ -597,6 +603,12 @@
     rerender();
   };
   A.demo = (d) => Pa.setDemo(d.on === '1');
+  A['island-extra'] = (d) => {
+    const n = +d.min, cur = App.islandExtraMin();
+    App.saveSettings({ islandExtra: { day: App.st.today, min: n ? cur + n : 0 } });
+    App.toast(n ? 'Heute ' + (cur + n) + ' Min. extra Inselzeit' : 'Extra-Zeit weggenommen');
+    rerender();
+  };
   A['sync-now'] = async () => { App.toast('Abgleich läuft …'); const ok = await App.store.sync(); App.toast(ok ? 'Abgeglichen' : 'Gerade keine Verbindung'); App.load(); rerender(); };
   A['show-codes'] = async () => { try { App.ui.codes = await App.store.codes(); } catch (e) { App.toast('Codes konnten nicht geladen werden'); } rerender(); };
   A['show-members'] = async () => { try { App.ui.members = await App.store.members(); } catch (e) { App.toast('Geräte konnten nicht geladen werden'); } rerender(); };

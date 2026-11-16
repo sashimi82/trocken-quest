@@ -357,3 +357,5 @@ ol.goal li .meter { margin-top: 4px; }
 /* Einrichtung und Codes */
 .code-big { font-size: 24px; letter-spacing: .08em; padding: 10px 12px; background: var(--panel-2); border: 2px solid var(--edge); text-align: center; user-select: all; -webkit-user-select: all; overflow-wrap: anywhere; }
 .code-in { font-size: 22px; letter-spacing: .1em; text-transform: uppercase; text-align: center; }
+
+.game-time.paused { opacity: .7; }
